@@ -1,7 +1,6 @@
 # CSCI 3601 Lab #2 - JavaScript and Spark Lab
 
-[![Build Status](https://travis-ci.org/UMM-CSci-3601/3601-lab2_client-server.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601/3601-lab2_client-server)
-
+[![Build Status](https://travis-ci.org/UMM-CSci-3601-F19/lab-2-michael-and-robert.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601-F19/lab-2-michael-and-robert)
 Here you will explore serving up a simple website that you create, 
 using a [Java Spark][spark] server. Spark is a micro framework for 
 creating web applications in Java. You will be using Spark to create 
