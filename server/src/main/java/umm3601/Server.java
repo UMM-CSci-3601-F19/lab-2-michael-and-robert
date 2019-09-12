@@ -16,7 +16,7 @@ public class Server {
 
   public static final String CLIENT_DIRECTORY = "../client";
   public static final String USER_DATA_FILE = "src/main/data/users.json";
-  public static final String TODO_DATA_FILE = "src/main/data/todo.json";
+  public static final String TODO_DATA_FILE = "src/main/data/todos.json";
   private static Database userDatabase;
   private static TodoDatabase todoDatabase;
 
@@ -24,6 +24,7 @@ public class Server {
 
     // Initialize dependencies
     UserController userController = buildUserController();
+    TodoController todoController = buildTodoController();
 
     // Configure Spark
     port(4567);
@@ -38,6 +39,7 @@ public class Server {
     // Redirects to create simpler URLs
     redirect.get("/about", "/about.html");
     redirect.get("/users", "/users.html");
+    redirect.get("/todo", "todo.html");
 
     // API endpoints
 
@@ -45,6 +47,9 @@ public class Server {
     get("api/users/:id", userController::getUser);
     // List users, filtered using query parameters
     get("api/users", userController::getUsers);
+
+    get("api/todo/:id", todoController::getTodo);
+    get("api/todo", todoController::getTodos);
 
     // An example of throwing an unhandled exception so you can see how the
     // Java Spark debugger displays errors like this.
