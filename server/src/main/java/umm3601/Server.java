@@ -5,6 +5,8 @@ import spark.Request;
 import spark.Response;
 import umm3601.user.Database;
 import umm3601.user.UserController;
+import umm3601.todo.TodoDatabase;
+import umm3601.todo.TodoController;
 
 import java.io.IOException;
 
@@ -14,7 +16,9 @@ public class Server {
 
   public static final String CLIENT_DIRECTORY = "../client";
   public static final String USER_DATA_FILE = "src/main/data/users.json";
+  public static final String TODO_DATA_FILE = "src/main/data/todo.json";
   private static Database userDatabase;
+  private static TodoDatabase todoDatabase;
 
   public static void main(String[] args) {
 
@@ -82,6 +86,24 @@ public class Server {
     }
 
     return userController;
+  }
+
+  private static TodoController buildTodoController() {
+    TodoController todoController = null;
+
+    try {
+      todoDatabase = new TodoDatabase(TODO_DATA_FILE);
+      todoController = new TodoController(todoDatabase);
+    } catch (IOException e) {
+      System.err.println("The server failed to load the todo data; shutting down.");
+      e.printStackTrace(System.err);
+
+      // Shut the server down
+      stop();
+      System.exit(1);
+    }
+
+    return todoController;
   }
 
   // Enable GZIP for all responses
