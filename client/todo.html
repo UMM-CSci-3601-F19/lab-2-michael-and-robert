@@ -8,14 +8,15 @@
   <script type="text/javascript" src="javascript/todo.js"></script>
 </head>
 <body>
-<button type="button" id="getAll">Get All Users</button>
+<button type="button" id="getAll">Get All Todos</button>
 
 <hr/>
 
 <div id="jsonDump" style="margin-top:20px"> Json will go here</div>
 
-<label for="owner">owner:</label><input id="age" type="text" name="age">
+<label for="owner">owner:</label><input id="owner" type="text" name="owner">
 <button type="button" id="getTodosByOwner"> get Todos by Owner</button>
+
 <label for="age">age:</label><input id="age" type="text" name="age">
 <button type="button" id="getUsersByAge"> get users by age</button>
 
@@ -24,10 +25,10 @@
     console.log("The page is loaded now!");
 
     var element = document.getElementById('getAll');
-    element.addEventListener("click", getAllUsers, true);
+    element.addEventListener("click", getAllTodos, true);
 
-    element = document.getElementById('getUsersByAge');
-    element.addEventListener("click", getAllUsersByAge, true);
+    element = document.getElementById('getTodosByOwner');
+    element.addEventListener("click", getAllTodosByOwner, true);
   }
 </script>
 </body>

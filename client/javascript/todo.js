@@ -2,17 +2,17 @@
  * Function to get all the users!
  */
 function getAllTodos() {
-  console.log("Getting all the users.");
+  console.log("Getting all the todos.");
 
   get("/api/todos", function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
 
-function getAllTodosByAge() {
-  console.log("Getting all the users.");
+function getAllTodosByOwner() {
+  console.log("Getting all the todos by owner.");
 
-  get("/api/todos?age=" + document.getElementById("age").value, function (returned_json) {
+  get("/api/todos?owner=" + document.getElementById("owner").value, function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
