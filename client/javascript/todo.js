@@ -16,3 +16,6 @@ function getAllTodosByOwner() {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
+function getAllTodosByCategory() {
+  
+}

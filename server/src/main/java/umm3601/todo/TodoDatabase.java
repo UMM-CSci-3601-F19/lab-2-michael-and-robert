@@ -52,7 +52,7 @@ public class TodoDatabase {
       filteredTodos = filterTodosByStatus(filteredTodos, targetStatus);
     }
     if (queryParams.containsKey("owner")) {
-      String targetOwner = String.split(queryParams.get("owner")[0]);
+      String targetOwner = queryParams.get("owner")[0];
       filteredTodos = filterTodosByOwner(filteredTodos, targetOwner);
     }
     // Process other query parameters here...

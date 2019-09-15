@@ -17,8 +17,15 @@
 <label for="owner">owner:</label><input id="owner" type="text" name="owner">
 <button type="button" id="getAllTodosByOwner"> get Todos by Owner</button>
 
-<label for="category">category:</label><input id="category" type="text" name="category">
-<button type="button" id="getTodosByCategory"> get Todos by category</button>
+<label for="category">category:</label>
+<select id="category" name="category">
+  <option value="homework">Homework</option>
+  <option value="software design">Software Design</option>
+  <option value="video games">Video Games</option>
+  <option value="groceries">Groceries</option>
+</select>
+<button type="button"id="getAllTodosByCategory"> get Todos by Category </button>
+
 
 <script>
   window.onload = function () {
@@ -29,6 +36,9 @@
 
     element = document.getElementById('getAllTodosByOwner');
     element.addEventListener("click", getAllTodosByOwner, true);
+
+    element = document.getElementById('getAllTodosByCategory');
+    element.addEventListener("clcik", getAllTodosByCategory, true);
   }
 </script>
 </body>
