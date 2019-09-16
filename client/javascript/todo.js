@@ -17,5 +17,7 @@ function getAllTodosByOwner() {
   });
 }
 function getAllTodosByCategory() {
-  
+  get("/api/todo?category=" +document.getElementById("category"), function (returned_json) {
+    document.getElementById('jsonDump').innerHTML = returned_json;
+  });
 }
