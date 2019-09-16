@@ -16,7 +16,7 @@
 
 <label for="owner">Owner:</label><input id="owner" type="text" name="owner">
 <button type="button" id="getAllTodosByOwner"> get Todos by Owner</button>
-
+<br>
 <label for="category">Category:</label>
 <select id="category" name="category">
   <option value="homework">Homework</option>
@@ -25,6 +25,9 @@
   <option value="groceries">Groceries</option>
 </select>
 <button type="button"id="getAllTodosByCategory"> get Todos by Category </button>
+<br>
+<label for="status">Status:</label><input id="status" type="text" name="status">
+<button type="button" id="getAllTodosByStatus"> get Todos by Status</button>
 
 
 <script>
@@ -39,6 +42,9 @@
 
     var element = document.getElementById('getAllTodosByCategory');
     element.addEventListener("click", getAllTodosByCategory, true);
+
+    var element = document.getElementById('getAllTodosByStatus');
+    element.addEventListener("click", getAllTodosByStatus, true);
   }
 </script>
 </body>

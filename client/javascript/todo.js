@@ -18,7 +18,13 @@ function getAllTodosByOwner() {
 }
 function getAllTodosByCategory() {
   console.log("Getting all the todos by category.")
-  get("/api/todo?category=" +document.getElementById("category"), function (returned_json) {
+  get("/api/todo?category=" + document.getElementById("category"), function (returned_json) {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
+}
+  function getAllTodosByStatus() {
+    console.log("Getting all the todos by status.")
+    get("/api/todo?status=" +document.getElementById("status"), function (returned_json) {
+      document.getElementById('jsonDump').innerHTML = returned_json;
+    });
 }
