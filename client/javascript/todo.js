@@ -22,7 +22,7 @@ function getAllTodosByCategory() {
     document.getElementById('jsonDump').innerHTML = returned_json;
   });
 }
-  function getAllTodosByStatus() {
+function getAllTodosByStatus() {
     console.log("Getting all the todos by status.")
     get("/api/todo?status=" +document.getElementById("status"), function (returned_json) {
       document.getElementById('jsonDump').innerHTML = returned_json;
