@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Todos los dias</title>
+  <title>Todos</title>
   <link rel="stylesheet" type="text/css" href="css/users.css">
   <script type="text/javascript" src="javascript/util.js"></script>
   <script type="text/javascript" src="javascript/todo.js"></script>
@@ -14,8 +14,10 @@
 
 <div id="jsonDump" style="margin-top:20px"> Json will go here</div>
 
-<label for="owner">Owner:</label><input id="owner" type="text" name="owner">
-<button type="button" id="getAllTodosByOwner"> get Todos by Owner </button>
+<hr/>
+
+<label for="owner">Owner: </label><input id="owner" type="text" name="owner">
+<button type="button" id="getAllTodosByOwner"> Get Todos by Owner </button>
 <br>
 <label for="category">Category:</label>
 <select id="category" name="category">
@@ -26,11 +28,11 @@
 </select>
 <button type="button"id="getAllTodosByCategory" for="category"> Get Todos by Category </button>
 <br>
-<label>Status:</label>
-<input type="radio" name="status" value="true">True <input type="radio" name="status" value="false">False
+<label for="status">Status:</label><input id="status" type="text" name="status">
 <button type="button" id="getAllTodosByStatus"> Get Todos by Status </button>
+
 <br>
-<label for="limit">Limit:</label><input id="limit" type="number" name="limit">
+<label for="limit">Limit: </label><input id="limit" type="number" name="limit">
 <button type="button" id="getAllTodosByLimit"> Get Todos by Limit </button>
 
 <script>
