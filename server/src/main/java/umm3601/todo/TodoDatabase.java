@@ -59,6 +59,11 @@ public class TodoDatabase {
       String targetCategory = queryParams.get("category")[0];
       filteredTodos = filterTodosByCategory(filteredTodos, targetCategory);
     }
+    if (queryParams.containsKey("limit")){
+      int limit = Integer.parseInt(queryParams.get("limit")[7]);
+      filteredTodos = filterTodosByLimit(filteredTodos, limit);
+
+    }
     // Process other query parameters here...
 
     return filteredTodos;
@@ -80,6 +85,9 @@ public class TodoDatabase {
   }
   public Todo[] filterTodosByCategory(Todo[] todos, String targetCategory) {
     return Arrays.stream(todos).filter(x -> x.category == targetCategory).toArray(Todo[]::new);
+  }
+  public Todo[] filterTodosByLimit(Todo[] todos, int limit){
+    return Arrays.stream(todos).limit(limit).toArray(Todo[]::new);
   }
 
 }

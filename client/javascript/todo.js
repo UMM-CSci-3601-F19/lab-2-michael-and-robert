@@ -28,3 +28,9 @@ function getAllTodosByStatus() {
       document.getElementById('jsonDump').innerHTML = returned_json;
     });
 }
+function  getAllTodosByLimit() {
+  console.log("Getting todos determined by the limit.")
+  get("api/todo?limit=" + document.getElementById("limit"), function (returned_json) {
+    document.getElementById('jsonDump').innerHTML = returned_json;
+  })
+}

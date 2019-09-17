@@ -15,7 +15,7 @@
 <div id="jsonDump" style="margin-top:20px"> Json will go here</div>
 
 <label for="owner">Owner:</label><input id="owner" type="text" name="owner">
-<button type="button" id="getAllTodosByOwner"> get Todos by Owner</button>
+<button type="button" id="getAllTodosByOwner"> get Todos by Owner </button>
 <br>
 <label for="category">Category:</label>
 <select id="category" name="category">
@@ -24,12 +24,14 @@
   <option value="video games">Video Games</option>
   <option value="groceries">Groceries</option>
 </select>
-<button type="button"id="getAllTodosByCategory" for="category"> get Todos by Category </button>
+<button type="button"id="getAllTodosByCategory" for="category"> Get Todos by Category </button>
 <br>
 <label>Status:</label>
 <input type="radio" name="status" value="true">True <input type="radio" name="status" value="false">False
-<button type="button" id="getAllTodosByStatus"> get Todos by Status</button>
-
+<button type="button" id="getAllTodosByStatus"> Get Todos by Status </button>
+<br>
+<label for="limit">Limit:</label><input id="limit" type="number" name="limit">
+<button type="button" id="getAllTodosByLimit"> Get Todos by Limit </button>
 
 <script>
   window.onload = function () {
@@ -46,6 +48,9 @@
 
     var element = document.getElementById('getAllTodosByStatus');
     element.addEventListener("click", getAllTodosByStatus, true);
+
+    var element = document.getElementById('getAllTodosByLimit');
+    element.addEventListener("click", getAllTodosByLimit, true);
   }
 </script>
 </body>
