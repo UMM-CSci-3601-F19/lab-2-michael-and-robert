@@ -48,7 +48,7 @@ public class TodoDatabase {
 
     // Filter status if defined
     if (queryParams.containsKey("status")) {
-      String targetStatus = queryParams.get("status")[0];
+      Boolean targetStatus = Boolean.parseBoolean(queryParams.get("status")[0]);
       filteredTodos = filterTodosByStatus(filteredTodos, targetStatus);
     }
     if (queryParams.containsKey("owner")) {
@@ -72,7 +72,7 @@ public class TodoDatabase {
    * @return an array of all the todos from the given list that have
    * the target status
    */
-  public Todo[] filterTodosByStatus(Todo[] todos, String targetStatus) {
+  public Todo[] filterTodosByStatus(Todo[] todos, Boolean targetStatus) {
     return Arrays.stream(todos).filter(x -> x.status == targetStatus).toArray(Todo[]::new);
   }
   public Todo[] filterTodosByOwner(Todo[] todos, String targetOwner) {
